@@ -67,20 +67,22 @@ regulatory instruments of the European Union (EU) into contact: the General Data
 Both regulatory frameworks have the same goal of protecting fundamental rights and freedoms of individuals, and they both apply simultaneously to to providers of high-risk AI systems that process personal data.
 This relationship is conceptualized as an additive one in Art. 2(7) AIA~\cite{euaiact2024}. They also follow a different regulatory logic, with the GDPR protection the fundamental right of privacy and the AIA acting as a product safety regulation for AI systems.\\
 This paper analyzes how this co-regulation affects providers and argues that the relationship is more complex than the AIA's additive model suggests. For this purpose, the paper first establishes a role mapping and 
-will then examine the parallel obligations that arise from the two frameworks. Finally, it will show that the debiasing exception in Art. 10(5) AIA creates a conflict, that neither framework can resolve on its own.
+will then examine the parallel obligations that arise from the two frameworks. Finally, it will show that the debiasing exception in Art. 10(5) AIA creates a conflict, that neither framework can resolve on its own.\\
 
 \section{Two Frameworks, One Actor}
 
-The mapping — phase-dependent:
-
-Provider = controller during training, because it determines what personal data is used, how, and for what objective
-Deployer = controller during deployment, because it determines purposes and the essential means relating to data subjects, even where the provider constrains technical means
-Provider = processor during inference only if inference runs on provider infrastructure and personal data flows to the provider; if the system is self-hosted by the deployer, the provider exits the processing chain entirely
-
-The gap:
-Where a continuous learning system feeds inference data back into retraining, the provider transitions from processor to controller for that secondary processing — determining a new purpose for its own benefit. This moment is governed by GDPR Articles 5(1)(b) and 6, but the AIA addresses it only obliquely through Article 15 on feedback loops, without resolving the GDPR consequences.
-The one claim of Section 1:
-The GDPR and AIA role architectures do not map onto each other statically — the same entity shifts between controller, processor, and regulatory absence depending on the lifecycle phase, and this shift is not addressed by either instrument.
+In both regulations there are distinct roles that entities can take on and that have different legal obligations. The GDPR distinguishes between data controllers and data processors, while the AIA distinguishes between providers and deployers of AI systems.
+In practice the roles of the two frameworks do not map onto each other statically, even though they often overlap if personal data that falls under the GDPR is involved.\\
+During the development and training of an AI system the provider can usually be considered to be the data controller, as it determines the purposes and means of the processing of personal data.
+Even though the provider can still give instructions to the deployer during the deployment phase on how to use the system and how to handle personal data, these constraints are merely technical and are not sufficient to make the provider a data processor during
+deployment. This role will be taken on by the deployer instead, as he keeps control over the purposes of the processing of personal data and, most crucially, can control who is a data subject, usually customers of the deployer, of that processing.
+If the inference does not run on the deployer's infrastucture and personal data flows to the server the AI system is hosted on, the natural or legal person that operates that server, which is either the provider, importer or distributor of the AI system,
+can be considered a data processor during inference. If the system is self-hosted by the deployer, the provider exits the processing chain entirely and is not subject to GDPR after deployment.~\cite{euaiact2024, eugdpr2016}\\
+While the mapping of these roles is grounded in the legal definitions of the two frameworks and the practical realities of AI development and deployment, there may nevertheless be edge cases or legal and contractual constellations in which this mapping does not hold.\\
+\\
+One important gap of the overlap of these roles can be found whenever the provider of a continuous learning system feeds inference data back into retraining.
+In this case, the provider may transition from processor to controller for that secondary processing, as it determines a new purpose for its own benefit. 
+This practice could conflict with GDPR Articles 5(1)(b) and 6~\cite{eugdpr2016}, but the AIA addresses it only obliquely through Article 15 on feedback loops, without adressing or resolving the GDPR consequences~\cite{euaiact2024}.\\
 
 \section{Parallel Obligations}
 
