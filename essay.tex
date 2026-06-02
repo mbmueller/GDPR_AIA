@@ -85,12 +85,34 @@ In this case, the provider may transition from processor to controller for that 
 This practice could conflict with GDPR Articles 5(1)(b) and 6~\cite{eugdpr2016}, but the AIA addresses it only obliquely through Article 15 on feedback loops, without adressing or resolving the GDPR consequences~\cite{euaiact2024}.\\
 
 \section{Parallel Obligations}
-
-\subsection{Data Governance}
-
-\subsection{Right to be Forgotten}
+In Article 2(7) the AIA states that the obligations of the GDPR apply in addition to the obligations of the AIA. This means that providers and deployers of high-risk AI systems that process personal data are subject to both sets of obligations simultaneously.
+This creates a complex regulatory landscape for these entities, as they must navigate and comply with the requirements of both frameworks. The GDPR has very specific obligations regarding data protection, such as data minimization, purpose limitation, and the rights of data subjects, while the AIA has its own set of obligations related to the safety and transparency of AI systems.\\
+In the following, the paper will analyze some of the most important obligations that arise from this co-regulation and wether they are complementary or conflicting.
 
 \subsection{Transparency Obligations}
+Both the GDPR and the AIA have certain transparency obligations, but they differ significantly in their purpose and scope. The GDPR defines its transparency obligations for data controllers in Articles 13 and 14.
+Main purpose of these obligations is to inform the data subjects about the processing of their personal data, including the purposes of the processing, the categories of data being processed as well as the recipients and time of storage of the data.
+It is notable that the GDPR does not require data controllers to disclose any information about the inner workings of the processing itself, such as the algorithms used or the logic behind the processing.~\cite{eugdpr2016}\\
+The AIA, on the other hand, has transparency oblications that are focused on the interpretability and explainability of the AI system itself. These obligation are outlined in Article 13(1) and Article 13(3)(f) and requires providers to provide instructions for use with their system. 
+However, these instructions for use are to be provided to the deployer and not to the data subjects, and they are not required to include any information about the processing of personal data specifically. 
+The only transparency requirement, directly targeting natural persons, and therefore potentially data subjects, is the disclosure of the fact that they are interacting with an AI system, as defined in Article 50 AIA.~\cite{euaiact2024}\\
+While both frameworks have transparency obligations, they are not necessarily complementary, as they target different audiences and have different purposes. As they also don't cause any direct conflicts, these obligations can be seen as parallel and independent of each other.
+
+\subsection{Data Governance}
+The governance of data is a crucial aspect of the AIA, especially to ensure the quality and representativeness of the data used for training and testing AI system. Apart from data quality Article 10(2)(b) AIA also demands that providers consider the origin of the data
+as well as the original purpose of the collection of personal data~\cite{euaiact2024}. Even though this clause references the original purpose of the collection, it does not explicitly mandates the compliance with the purpose limitation principle 
+established in Article 5(1)(b) GDPR. Not only does the AIA fail to explicitly require compliance with the GDPR's purpose limitation principle, it requires providers to ensure a representative and bias free dataset, which, in practice,
+requires large datasets~\cite{Samuel2021Distributional} as well as the collection of additional data that may not be necessary for the original purpose of the collection, and therefore conflicts with the GDPR's principle of data minimization in Article 5(1)(c)~\cite{eugdpr2016}.
+
+\subsection{Right to be Forgotten}
+The right to be forgotten is established in Article 17 GDPR and allows data subjects to request the deletion of their personal data under certain conditions. This right is regularly confirmed and strengthend by the Court of Justice of the European Union (CJEU) and other
+national courts~\cite{googlespain2014,Kazemi2018}. Personal data that is used for training an AI system becomes an integral part of the AI model and is not stored in a traditional sense, but rather encoded in the parameters of the model and the influence of a single data
+point on the model is not easily identifiable. In cases where it is possible to extract the training data from the model in a way that could allow the identification of a data subject the European Data Protection Board (EDPB) has clarified that the right to be 
+forgotten applies to the trained model as well~\cite{edpb}. In practice this requires the AI model to unlearn this data point, which is technically possible but may not always be feasible~\cite{Velli2025,JuliussenRuiJohansen2023}.
+Even though the right to be forgotten is a fundamental right under the GDPR and compliance with it is a legal obligation for data controllers, the AIA does not explicitly ensures that providers of AI systems have the technical means to unlearn data points from their
+model or any other way to comply with the right to be forgotten. This leaves a gap between a significant obligation under the GDPR and the requirements of the AIA.\\
+\\
+In general these obligations show that the co-regulation of the GDPR and the AIA are additive in some cases, but they also have significant regulatory gaps and structural tensions between the compliance with both frameworks.\\
 
 \section{The Debiasing Exception}
 
