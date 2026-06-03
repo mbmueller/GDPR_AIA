@@ -67,7 +67,7 @@ regulatory instruments of the European Union (EU) into contact: the General Data
 Both regulatory frameworks have the same goal of protecting fundamental rights and freedoms of individuals, and they both apply simultaneously to to providers of high-risk AI systems that process personal data.
 This relationship is conceptualized as an additive one in Art. 2(7) AIA~\cite{euaiact2024}. They also follow a different regulatory logic, with the GDPR protection the fundamental right of privacy and the AIA acting as a product safety regulation for AI systems.\\
 This paper analyzes how this co-regulation affects providers and argues that the relationship is more complex than the AIA's additive model suggests. For this purpose, the paper first establishes a role mapping and 
-will then examine the parallel obligations that arise from the two frameworks. Finally, it will show that the debiasing exception in Art. 10(5) AIA creates a conflict, that neither framework can resolve on its own.\\
+will then examine the parallel obligations that arise from the two frameworks. Finally, it will show that the debiasing exception in Art. 10(5) AIA requires an interaction between the two frameworks.\\
 
 \section{Two Frameworks, One Actor}
 
@@ -115,6 +115,28 @@ model or any other way to comply with the right to be forgotten. This leaves a g
 In general these obligations show that the co-regulation of the GDPR and the AIA are additive in some cases, but they also have significant regulatory gaps and structural tensions between the compliance with both frameworks.\\
 
 \section{The Debiasing Exception}
+
+So far it could be established that, while there are some structural gaps and tensions between the two frameworks, there is no substantial interaction between the GDPR and the AIA. However, this co-regulation paradigm changes in
+Art. 10(5) AIA, which establishes an exception of the GDPR for the purpose of debiasing AI systems. In general Art. 10(2)(f) AIA demands that providers of high-risk AI systems ensure that the data used for training is free of any biases
+that could lead to discriminatory outcomes~\cite{euaiact2024}, especially these biases could be related to disablity, religion, racial origin or sexual orientation.
+
+\subsection{Proxy characteristics}
+
+Even data that seems unrelated to any of the aforementioned protected characteristics could classify as a proxy for those characteristics. To give a concrete example, the Police Crime Statistics in Germany (PCS) shows that crime suspects
+with a non-German citizenship are overrepresented when compared to their share of the general population~\cite{pks2025}. A closer look into the data reveals that this overrepresentation vanishes when the variables are controlled for factors 
+such as age, gender, place of living and socio-economic status~\cite{pksIfo}. This means that the non-German citizenship is not a predictor for criminal behaviour, in fact those two variables are not even correlated\footnote{There are even more reasons why the PCS does not show a causal relationship between having a non-German citizenship and criminal behaviour. More about this can be found in these German sources \cite{pksIfo,Integration}.}, 
+but the non-German citizenship acts as a proxy for the other factors, which are the actual predictors for criminal behaviour, and vice versa.
+
+\subsection{No debiasing without personal data}
+
+The example of the PCS shows that a provider of an AI system that uses crime data for training needs to ensure that these biases are removed from the training data. Without access to the migration status of crime suspects,
+it would be impossible to identify and remove the bias from the data~\cite{VANBEKKUM2025106115}. Unfortunately, the processing of special categories of personal data, including the aforementioned disability, religion, racial origin and sexual orientation,
+is generally prohibited under Art. 9(1) GDPR, unless one of the exceptions in Art. 9(2) applies. Art. 9(2)(g) GDPR establishes the exception for processing these special categories of personal data where it is necessary for reasons of substantial
+public interest and is based on Union law.~\cite{eugdpr2016} The AIA is a Union law under this Article~\cite{VANBEKKUM2025106115} and allows the processing of special categories of special categories of personal data for
+the pupose of debiasing AI systems in Art. 10(5)~\cite{euaiact2024}. The public interest of this exception, which is a requirement of Art. 9(2)(g) GDPR, was justified in Recital 70 of the AIA.\\
+\\
+The debiasing exception in Art. 10(5) AIA shows that the relationship between the GDPR and the AIA is not purely additive, but that it constitutes a significant interaction between the two frameworks.
+The exception is also necessary to ensure that high-risk AI systems can be trained on bias-free data, which is crucial to ensure non-discriminatory outcomes and to protect the fundamental rights of individuals.\\
 
 \section{Conclusion}
 
